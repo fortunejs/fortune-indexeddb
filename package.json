@@ -20,7 +20,7 @@
     "browserify": "^13.1.0",
     "eslint": "^3.8.1",
     "eslint-config-boss": "^1.0.4",
-    "fortune": "git@github.com:fortunejs/fortune.git",
+    "fortune": "fortunejs/fortune",
     "tapdance": "^5.0.2",
     "tape-run": "^2.1.4"
   },
