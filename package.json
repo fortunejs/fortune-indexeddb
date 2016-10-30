@@ -1,0 +1,38 @@
+{
+  "name": "fortune-indexeddb",
+  "description": "IndexedDB adapter for Fortune.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fortunejs/fortune-indexeddb.git"
+  },
+  "scripts": {
+    "lint": "eslint lib",
+    "postpublish": "npm run tag",
+    "tag": "git tag `npm v fortune-indexeddb version` && git push origin --tags",
+    "test": "npm run lint && browserify test/index.js | tape-run"
+  },
+  "dependencies": {
+    "msgpack-lite": "^0.1.26"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "eslint": "^3.8.1",
+    "eslint-config-boss": "^1.0.4",
+    "fortune": "fortunejs/fortune#extract-modules",
+    "tapdance": "^5.0.2",
+    "tape-run": "^2.1.4"
+  },
+  "main": "lib/index.js",
+  "eslintConfig": {
+    "extends": "boss/es5"
+  },
+  "engines": {
+    "node": ">=4.6"
+  },
+  "keywords": [
+    "indexeddb",
+    "adapter"
+  ]
+}
