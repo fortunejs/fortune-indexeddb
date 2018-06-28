@@ -11,6 +11,9 @@ var store = fortune({
 })
 
 store.connect().then(function () {
+  return store.find('person')
+}).then(function (result) {
+	document.write('inital find<br/><pre>' + JSON.stringify(result, null, 2) + '</pre>')
   return store.adapter.delete('person')
 }).then(function () {
   return store.create('person', {
@@ -27,5 +30,5 @@ store.connect().then(function () {
 }).then(function () {
   return store.find('person')
 }).then(function (result) {
-  document.write('<pre>' + JSON.stringify(result, null, 2) + '</pre>')
+  document.write('memory find<br/><pre>' + JSON.stringify(result, null, 2) + '</pre>')
 })
