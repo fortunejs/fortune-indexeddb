@@ -11,7 +11,7 @@ This is an IndexedDB adapter for Fortune.js. Various performance and compatibili
 - Primary keys are universally unique, which solves some [compatibility problems](https://www.raymondcamden.com/2014/09/25/IndexedDB-on-iOS-8-Broken-Bad).
 
 ```sh
-$ npm install fortune-indexeddb --save
+$ npm install fortune-indexeddb
 ```
 
 
@@ -25,8 +25,8 @@ const indexedDBAdapter = require('fortune-indexeddb')
 
 const store = fortune(recordTypes, {
   adapter: [ indexedDBAdapter, {
-    // Name of the IndexedDB database to use. Defaults to `fortune`.
-    name: 'fortune'
+    // Name of the IndexedDB database to use. Defaults to `db`.
+    name: 'db'
   } ]
 })
 ```
