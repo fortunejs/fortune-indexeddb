@@ -29,9 +29,6 @@
   "eslintConfig": {
     "extends": "boss/es5"
   },
-  "engines": {
-    "node": ">=4.6"
-  },
   "keywords": [
     "indexeddb",
     "adapter"
