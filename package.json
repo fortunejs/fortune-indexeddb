@@ -1,7 +1,7 @@
 {
   "name": "fortune-indexeddb",
   "description": "IndexedDB adapter for Fortune.",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -18,12 +18,12 @@
     "msgpack-lite": "^0.1.26"
   },
   "devDependencies": {
-    "browserify": "^16.2.2",
-    "eslint": "^5.0.1",
+    "browserify": "^16.2.3",
+    "eslint": "^5.16.0",
     "eslint-config-boss": "^1.0.6",
-    "fortune": "^5.4.3",
-    "tapdance": "^5.1.0",
-    "tape-run": "^4.0.0"
+    "fortune": "^5.5.17",
+    "tapdance": "^5.1.1",
+    "tape-run": "^6.0.0"
   },
   "main": "lib/index.js",
   "eslintConfig": {

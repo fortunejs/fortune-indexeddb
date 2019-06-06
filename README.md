@@ -7,7 +7,7 @@
 This is an IndexedDB adapter for Fortune.js. Various performance and compatibility optimizations are included:
 
 - Runs in a Web Worker so that database operations don't [block the main thread](https://nolanlawson.com/2015/09/29/indexeddb-websql-localstorage-what-blocks-the-dom/), and uses [MessagePack](http://msgpack.org) for [messaging](https://developer.mozilla.org/en/docs/Web/API/Worker/postMessage).
-- Loads all records in memory so that unnecessary database reads are avoided.
+- Lazy loads records as they're requested and keeps them in memory.
 - Primary keys are universally unique, which solves some [compatibility problems](https://www.raymondcamden.com/2014/09/25/IndexedDB-on-iOS-8-Broken-Bad).
 
 ```sh
