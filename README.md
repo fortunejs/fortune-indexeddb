@@ -26,7 +26,10 @@ const indexedDBAdapter = require('fortune-indexeddb')
 const store = fortune(recordTypes, {
   adapter: [ indexedDBAdapter, {
     // Name of the IndexedDB database to use. Defaults to `db`.
-    name: 'db'
+    name: 'db',
+    // These are optional to implement, if storage compression is needed.
+    compress: uint8array => uint8array,
+    decompress: uint8array => uint8array,
   } ]
 })
 ```
