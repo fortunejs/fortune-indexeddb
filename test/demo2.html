@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>IndexedDB demo</title>
+<script type="module">
+  import { get, set, setMany, getMany } from 'https://cdn.jsdelivr.net/npm/idb-keyval@6/+esm';
+  let time;
+  const people = new Array(100).fill().map(() => {
+    const id = Math.random();
+    return [id, {
+      id,
+      name: 'B',
+      friends: [ 1 ],
+    }];
+  })
+
+  time = Date.now();
+
+  for (const [id, person] of people) {
+    await set(id, person);
+  }
+
+  document.write('<pre>write serial ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+  await setMany(people);
+  document.write('<pre>write bulk ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+
+  for (const [id] of people) {
+    await get(id);
+  }
+
+  document.write('<pre>read serial ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+  await getMany(people.map(([id]) => id));
+  document.write('<pre>read bulk ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+</script>

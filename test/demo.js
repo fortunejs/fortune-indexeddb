@@ -28,11 +28,11 @@ store.connect().then(function () {
     friends: [ record.id ]
   })))
 }).then(function () {
-  document.write('<pre>write ' + (Date.now() - time) + ' ms</pre>')
+  document.write('<pre>write bulk ' + (Date.now() - time) + ' ms</pre>')
   time = Date.now()
   return store.find('person')
 }).then(function (result) {
-  document.write('<pre>read ' + (Date.now() - time) + ' ms</pre>')
+  document.write('<pre>read bulk ' + (Date.now() - time) + ' ms</pre>')
   // document.write('<pre>' + JSON.stringify(result, null, 2) + '</pre>')
   time = Date.now()
   const { payload: { records: [{ friends }] } } = result;
