@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>IndexedDB demo</title>
+<script type="module">
+  import { setMany, getMany } from 'https://cdn.jsdelivr.net/npm/idb-keyval@6/+esm';
+  const enc = new TextEncoder();
+  let time;
+  const people = new Array(100).fill().map(() => {
+    const id = Math.random();
+    return [id, enc.encode(JSON.stringify({
+      id,
+      name: 'B',
+      friends: [ 1 ],
+    })).buffer];
+  })
+
+  time = Date.now();
+  await setMany(people);
+  document.write('<pre>write bulk (ArrayBuffer) ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+
+  await getMany(people.map(([id]) => id));
+  document.write('<pre>read bulk (ArrayBuffer) ' + (Date.now() - time) + ' ms</pre>');
+  time = Date.now();
+</script>

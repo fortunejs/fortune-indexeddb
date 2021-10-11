@@ -20,12 +20,12 @@
     worker.postMessage(["setMany", people]);
     worker.onmessage = resolve;
   });
-  document.write('<pre>write bulk ' + (Date.now() - time) + ' ms</pre>');
+  document.write('<pre>write bulk (worker) ' + (Date.now() - time) + ' ms</pre>');
   time = Date.now();
   const result = await new Promise((resolve) => {
     worker.postMessage(["getMany", ids]);
     worker.onmessage = ({ data }) => resolve(data);
   });
-  document.write('<pre>read bulk ' + (Date.now() - time) + ' ms</pre>');
+  document.write('<pre>read bulk (worker) ' + (Date.now() - time) + ' ms</pre>');
   time = Date.now();
 </script>
