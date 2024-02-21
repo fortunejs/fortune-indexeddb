@@ -1,9 +1,0 @@
-sudo: false
-
-services:
-  - xvfb
-
-language: node_js
-
-node_js:
-  - "12.6"
